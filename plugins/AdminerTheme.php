@@ -57,26 +57,68 @@ class AdminerTheme {
 
 		<link rel="stylesheet" type="text/css" href="css/<?php echo htmlspecialchars($this->themeName) ?>.css?2">
 
-		<script>
+		<script>			
 			(function (window) {
 				"use strict";
 
 				window.addEventListener("load", function () {
 					prepareMenuButton();
+					styleLogin();
+					document.getElementsByTagName('body')[0].style.display = 'block';
+					styleLang();
 				}, false);
+
+				function styleLogin(){
+					if (document.getElementById("username")){
+						document.getElementsByTagName("form")[0].className += " login-form";
+					}
+				}
+
+				function styleLang() {
+					var lang = document.getElementById("lang");
+					var logout = document.getElementById("logout");
+					if (logout) {						
+						lang.style.width = lang.offsetWidth + logout.offsetWidth + 20 + 'px';
+					} else {
+						lang.style.width = lang.offsetWidth + 'px';
+					}
+				}
 
 				function prepareMenuButton() {
 					var menu = document.getElementById("menu");
+					var breadcrumb = document.getElementById("breadcrumb");
+					var content = document.getElementById("content");
 					var button = menu.getElementsByTagName("h1")[0];
 					if (!menu || !button) {
 						return;
 					}
 
+					function setBreadcrumbLeft(size = 30){
+						if(breadcrumb){
+							breadcrumb.style.left = size + 'px';
+						}
+					}
+
+					menu.style.minHeight = window.innerHeight + 'px';				
+
+					if (localStorage.getItem('adminerMenuStatus') !== 'closed') {
+						menu.className += " open";
+					} else {
+						setBreadcrumbLeft();
+						content.style.marginLeft = 0;
+					}
+
 					button.addEventListener("click", function () {
 						if (menu.className.indexOf(" open") >= 0) {
 							menu.className = menu.className.replace(/ *open/, "");
+							localStorage.setItem('adminerMenuStatus', 'closed');
+							setBreadcrumbLeft();
+							content.style.marginLeft = 0;
 						} else {
 							menu.className += " open";
+							localStorage.setItem('adminerMenuStatus', 'open');
+							setBreadcrumbLeft(261);
+							content.style.marginLeft = '261px';
 						}
 					}, false);
 				}
