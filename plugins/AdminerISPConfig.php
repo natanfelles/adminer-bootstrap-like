@@ -13,95 +13,99 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
  */
-class AdminerISPConfig {
+class AdminerISPConfig
+{
+    private $username;
+    private $password;
+    private $soap_uri;
+    private $check_ssl;
+
+    /**
+     * AdminerISPConfig constructor.
+     * @param string $username
+     * @param string $password
+     * @param string $soap_uri Example: https://server.domain.tld:8080/remote/
+     * @param bool $check_ssl Set FALSE if you are using a Self Signed certificate
+     */
+    function __construct($username, $password, $soap_uri, $check_ssl = true)
+    {
+        $this->username = $username;
+        $this->password = $password;
+        $this->soap_uri = $soap_uri;
+        $this->check_ssl = $check_ssl;
+    }
 
 
-	var $username = 'admin';
-	var $password = 'admin';
-	var $soap_uri = 'https://server.domain.tld:8080/remote/';
-	var $check_ssl = FALSE; // Set FALSE if you are using a Self Signed certificate
+    function credentials()
+    {
+        return array($this->get_server(), $_GET["username"], get_password());
+    }
 
 
-	function credentials()
-	{
-		return array($this->get_server(), $_GET["username"], get_password());
-	}
+    function get_server()
+    {
+        $soap_location = $this->soap_uri . '/index.php';
 
+        if ($this->check_ssl == false) {
+            $stream_context = stream_context_create(array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true,
+                ),
+            ));
+        } else {
+            $stream_context = null;
+        }
 
-	function get_server()
-	{
-		$username = $this->username;
-		$password = $this->password;
-		$soap_uri = $this->soap_uri;
-		$soap_location = $soap_uri . '/index.php';
+        $client = new SoapClient(null, array(
+            'location' => $soap_location,
+            'uri' => $this->soap_uri,
+            'stream_context' => $stream_context,
+            'trace' => 1,
+            'exceptions' => 1,
+        ));
 
-		if ($this->check_ssl == FALSE)
-		{
-			$stream_context = stream_context_create(array(
-				'ssl' => array(
-					'verify_peer'       => FALSE,
-					'verify_peer_name'  => FALSE,
-					'allow_self_signed' => TRUE,
-				),
-			));
-		}
-		else
-		{
-			$stream_context = NULL;
-		}
+        try {
+            $session_id = $client->login($this->username, $this->password);
 
-		$client = new SoapClient(NULL, array(
-			'location'       => $soap_location,
-			'uri'            => $soap_uri,
-			'stream_context' => $stream_context,
-			'trace'          => 1,
-			'exceptions'     => 1,
-		));
+            $web_database_user = $client->sites_database_user_get($session_id, [
+                'database_user' => h($_GET["username"]),
+            ]);
 
-		try
-		{
-			$session_id = $client->login($username, $password);
+            $server = $client->server_get($session_id, $web_database_user['server_id'], $section = 'server');
 
-			$web_database_user = $client->sites_database_user_get($session_id, [
-				'database_user' => h($_GET["username"]),
-			]);
+            $client->logout($session_id);
 
-			$server = $client->server_get($session_id, $web_database_user['server_id'], $section = 'server');
+            return $server[1]['hostname'];
+        } catch (SoapFault $e) {
+            die('SOAP Error: ' . $e->getMessage());
+        }
+    }
 
-			$client->logout($session_id);
+    function loginForm()
+    {
+        ?>
+        <div id="login">
+            <table>
+                <input type="hidden" name="auth[driver]" value="server">
+                <tr>
+                    <th><?php echo lang('Username'); ?>
+                    <td>
+                        <input id="username" name="auth[username]" value="<?php echo h($_GET["username"]); ?>">
+                <tr>
+                    <th><?php echo lang('Password'); ?>
+                    <td><input type="password" name="auth[password]">
+            </table>
+            <p><input type="submit" value="<?php echo lang('Login'); ?>">
+                <?php
+                echo checkbox("auth[permanent]", 1, $_COOKIE["adminer_permanent"], lang('Permanent login')) . "\n";
+                ?>
+        </div>
+        <?php
 
-			return $server[1]['hostname'];
-		}
-		catch (SoapFault $e)
-		{
-			die('SOAP Error: ' . $e->getMessage());
-		}
-	}
-
-
-	function loginForm()
-	{
-		?>
-		<div id="login">
-			<table>
-				<input type="hidden" name="auth[driver]" value="server">
-				<tr>
-					<th><?php echo lang('Username'); ?>
-					<td>
-						<input id="username" name="auth[username]" value="<?php echo h($_GET["username"]); ?>">
-				<tr>
-					<th><?php echo lang('Password'); ?>
-					<td><input type="password" name="auth[password]">
-			</table>
-			<p><input type="submit" value="<?php echo lang('Login'); ?>">
-				<?php
-				echo checkbox("auth[permanent]", 1, $_COOKIE["adminer_permanent"], lang('Permanent login')) . "\n";
-				?>
-		</div>
-		<?php
-
-		return TRUE;
-	}
+        return true;
+    }
 
 
 }
