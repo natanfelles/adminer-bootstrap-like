@@ -25,7 +25,7 @@ function adminer_object()
 			new AdminerLoginServerEnhanced('127.0.0.1:3306', '127.0.0.1:3306 - MySQL', 'server'),
 			new AdminerLoginServerEnhanced('127.0.0.1:3307', '127.0.0.1:3307 - MariaDB', 'server'),
 			new AdminerLoginServerEnhanced('127.0.0.1:5432', '127.0.0.1:5432 - PostgreSQL', 'pgsql'),
-			new AdminerLoginServerEnhanced('127.0.0.1:5432', '127.0.0.1:27017 - MongoDB', 'mongo'),
+			new AdminerLoginServerEnhanced('127.0.0.1:27017', '127.0.0.1:27017 - MongoDB', 'mongo'),
 		]),*/
 
 		/*new AdminerCollations([
@@ -37,12 +37,12 @@ function adminer_object()
 		new AdminerJsonPreview(),
 		new AdminerDumpJson(),
 
-		// new AdminerISPConfig(),
+		// new AdminerISPConfig('admin','admin', 'https://server.domain.tld:8080/remote/'),
 
 		new AdminerSimpleMenu(),
 
 		// AdminerTheme has to be the last one.
-		new AdminerTheme('bootstrap-like'),
+		new AdminerTheme('light', ['light']),
 	];
 
 	return new AdminerPlugin($plugins);

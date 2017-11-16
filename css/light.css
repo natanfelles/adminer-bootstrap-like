@@ -1,3 +1,6 @@
+/*!
+ * @author Natan Felles <natanfelles@gmail.com>
+ */
 html, body, header, footer, aside, menu, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 0;
 	padding: 0;
@@ -128,6 +131,7 @@ input:not([type]), input[type="text"], input[type="email"], input[type="password
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	resize: none !important;
 }
 
 input:not([type]):focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, textarea:focus, pre[contenteditable="true"]:focus, select:focus {
@@ -140,7 +144,7 @@ input:not([type]), input[type="text"], input[type="email"], input[type="password
 }
 
 input:not([type]), input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="number"], select {
-	height: 34px
+	height: 34px;
 }
 
 input[type="submit"] {
@@ -171,6 +175,22 @@ input[type="submit"][disabled=""]:hover {
 	background: #fff
 }
 
+input[name='drop'], input[name='delete'] {
+	color: #fff !important;
+	background-color: #d9534f !important;
+	border-color: #d43f3a !important;
+}
+
+input[name='drop']:hover, input[name='delete']:hover {
+	background-color: #c9302c !important;
+	border-color: #ac2925 !important;
+}
+
+input[name='drop']:active, input[name='delete']:active {
+	background-color: #ac2925 !important;
+	border-color: #761c19 !important;
+}
+
 input[type="submit"].default {
 	box-shadow: none
 }
@@ -196,10 +216,10 @@ input[type="checkbox"], input[type="radio"] {
 
 fieldset {
 	margin: 15px 5px 10px 0;
-	padding: 15px;
+	padding: 0 15px 8px;
 	border: 1px solid #ddd;
 	background: #fff;
-	min-height: 55px;
+	min-height: 80px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 	border-radius: 4px;
 }
@@ -267,7 +287,7 @@ p input, p select, p label, fieldset input, fieldset select {
 
 .js fieldset > .hidden {
 	display: block;
-	margin: 6px;
+	margin: 5px;
 	text-align: center
 }
 
@@ -363,6 +383,7 @@ p input, p select, p label, fieldset input, fieldset select {
 	}
 }
 
+#theme,
 #lang {
 	position: fixed;
 	right: 0;
@@ -376,10 +397,15 @@ p input, p select, p label, fieldset input, fieldset select {
 	z-index: 101;
 }
 
+#theme select,
 #lang select {
 	padding: 2px 3px;
 	margin: 6px 0;
 	width: 160px;
+}
+
+#theme select {
+	width: 80px;
 }
 
 .logout {
@@ -420,6 +446,13 @@ p input, p select, p label, fieldset input, fieldset select {
 		padding: 5px;
 	}
 
+	#theme {
+		position: relative;
+		float: right;
+		margin-top: -45px
+	}
+
+	#theme select,
 	#lang select {
 		margin: 4px 10px 0 10px
 	}
@@ -476,7 +509,8 @@ p input, p select, p label, fieldset input, fieldset select {
 	line-height: 49px;
 	z-index: 100;
 	overflow: hidden;
-	text-overflow: ellipsis
+	text-overflow: ellipsis;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 #breadcrumb a {
@@ -487,14 +521,14 @@ p input, p select, p label, fieldset input, fieldset select {
 }
 
 h2 {
-	margin: 20px 0;
-	font-size: 20pt;
+	margin: 12px 0;
+	font-size: 30px;
 	color: #333
 }
 
 h3 {
-	margin: 30px 0 10px 0;
-	font-size: 16pt
+	margin: 16px 0 10px 0;
+	font-size: 24px
 }
 
 p {
@@ -623,22 +657,25 @@ h1 #h1 {
 
 #menu {
 	position: fixed;
-	left: 0;
+	left: 1px;
 	top: 50px;
 	bottom: 0;
 	width: 260px;
 	margin: 0;
 	padding: 0;
 	border-right: 1px solid #ddd;
-	overflow-y: auto;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 	background: #fff;
-	z-index: 100
+	z-index: 100;
 }
 
 .rtl #menu {
 	border-left: 1px solid #ddd;
+}
+.rtl * {
+	text-align: right;
 }
 
 #menu h1 {
@@ -672,6 +709,7 @@ h1 #h1 {
 	border-bottom: 1px solid #ddd;
 	padding: 1px 10px;
 	text-align: center;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 #menu .links a {
@@ -682,7 +720,13 @@ h1 #h1 {
 
 #menu #tables, #menu #logins {
 	border: 0;
-	padding: 0
+	padding: 0;
+	overflow-y: hidden;
+	/*width: 281px;*/
+}
+
+#menu #tables:hover, #menu #logins:hover {
+	overflow-y: auto;
 }
 
 #menu #logins {
@@ -709,6 +753,13 @@ h1 #h1 {
 .menuLink.active {
 	color: #d55d00;
 	font-weight: bold
+}
+
+#tables {
+	margin: 0;
+	padding: 0.8em 1em;
+	border-bottom: 1px solid #ccc;
+	list-style: none;
 }
 
 #tables a[href*="&table="] {
@@ -803,11 +854,21 @@ h1 #h1 {
 	background-color: #337ab7;
 }
 
-#tables.simple a[href*="&select="]:before {
+#tables.simple a[href*="&select="]:before,
+.rtl #tables.simple a[href*="&select="]:after {
 	font-family: FontAwesome;
 	content: "\f0ce";
 	margin-right: 2px;
 	color: #337ab7;
+}
+
+.rtl #tables.simple a[href*="&select="]:before {
+	content: "";
+	margin-right: 0;
+}
+
+.rtl #tables.simple a[href*="&select="]:after {
+	margin-left: 2px;
 }
 
 #tables.simple li {
@@ -838,7 +899,7 @@ h1 #h1 {
 	line-height: 20px;
 	color: #444;
 	text-overflow: ellipsis;
-	border-bottom: 1px solid #ddd; 
+	border-bottom: 1px solid #ddd;
 }
 
 #logins a.active {
@@ -915,8 +976,12 @@ h1 #h1 {
 	border-bottom: 5px solid #ddd;
 	background: #fff;
 	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.03);
-	z-index: 200;
-	overflow-y: auto
+	z-index: 200;	
+}
+
+#menu.open {
+	overflow: hidden;
+	height: 100%
 }
 
 #menu.open form, #menu.open p {
@@ -952,6 +1017,7 @@ h1 #h1 {
 	padding: 6px 12px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-right: 5px;
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 1.42857143;
@@ -960,6 +1026,11 @@ h1 #h1 {
 	vertical-align: middle;
 	display: inline-block;
 
+}
+
+.rtl .links a {
+	margin-left: 20px;
+	margin-right: 0;
 }
 
 .links a:hover {
@@ -1060,6 +1131,10 @@ h1 #h1 {
 
 .links a[href*="&user="]:before {
 	content: "\f007";
+}
+
+.links a[href*="&replication="]:before {
+	content: "\f0c5";
 }
 
 .links a[href*="&foreign="]:before, .links a[href*="&trigger="]:before {
@@ -1171,7 +1246,7 @@ table.checkable > tbody > tr.checked:hover {
 }
 
 .pages {
-	left: 261px;
+	left: 0;
 	right: 0;
 	margin: 0;
 	padding: 0 10px;
@@ -1360,10 +1435,17 @@ a.json-link span {
 	vertical-align: middle;
 }
 
-.login-form select {
+.login-form select,
+.login-form table input {
 	width: 100%;
 }
 
-body {
-	/* display: none; */
+#sensor {
+	width: 1px;
+	background: #ddd;
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 50px;
+	z-index: 90;
 }
