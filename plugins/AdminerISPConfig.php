@@ -73,13 +73,22 @@ class AdminerISPConfig
                 'database_user' => h($_GET["username"]),
             ]);
 
-            $server = $client->server_get($session_id, $web_database_user['server_id'], $section = 'server');
+            $server = $client->server_get($session_id, $web_database_user['server_id'], 'server');
 
             $client->logout($session_id);
 
             return $server[1]['hostname'];
         } catch (SoapFault $e) {
-            die('SOAP Error: ' . $e->getMessage());
+            //die('SOAP Error: ' . $e->getMessage());
+            page_header(lang('Login'), 'SOAP Error: ' . $e->getMessage(), null);
+            echo "<form action='' method='post'>\n";
+            $this->loginForm();
+            echo "<div>";
+            hidden_fields($_POST, array("auth")); // expired session
+            echo "</div>\n";
+            echo "</form>\n";
+            page_footer("auth");
+            exit;
         }
     }
 
