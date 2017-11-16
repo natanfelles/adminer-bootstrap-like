@@ -630,7 +630,7 @@ h1 {
 h1 #h1 {
 	display: inline-block;
 	padding: 0;
-	background: url("../images/logo.png?3") 10px center no-repeat;
+	background: url("../images/logo.png") 10px center no-repeat;
 	background-size: 120px;
 	text-indent: -100px;
 	width: 135px;

@@ -57,22 +57,22 @@ class AdminerTheme {
 			?>
 			  <meta name="application-name" content="Adminer"/>
 			  <meta name="msapplication-TileColor" content="#ffffff"/>
-			  <meta name="msapplication-square150x150logo" content="images/tileIcon.png"/>
-			  <meta name="msapplication-wide310x150logo" content="images/tileIcon-wide.png"/>
+			  <meta name="msapplication-square150x150logo" content="assets/images/tileIcon.png"/>
+			  <meta name="msapplication-wide310x150logo" content="assets/images/tileIcon-wide.png"/>
 
 		<?php elseif (strpos($userAgent, "iPhone") !== FALSE || strpos($userAgent, "iPad") !== FALSE): ?>
-			  <link rel="apple-touch-icon-precomposed" href="images/touchIcon.png"/>
+			  <link rel="apple-touch-icon-precomposed" href="assets/images/touchIcon.png"/>
 
 		<?php elseif (strpos($userAgent, "Android") !== FALSE): ?>
-			  <link rel="apple-touch-icon-precomposed" href="images/touchIcon-android.png?2"/>
+			  <link rel="apple-touch-icon-precomposed" href="assets/images/touchIcon-android.png?2"/>
 
 		<?php else: ?>
-			  <link rel="apple-touch-icon" href="images/touchIcon.png"/>
+			  <link rel="apple-touch-icon" href="assets/images/touchIcon.png"/>
 		<?php endif; ?>
 
-		 <link rel="stylesheet" type="text/css" href="css/<?php echo htmlspecialchars($this->themeName) ?>.css?2">
+		 <link rel="stylesheet" type="text/css" href="assets/css/<?php echo htmlspecialchars($this->themeName) ?>.css">
 
-		<script type="text/javascript" src="js/adminer-theme.js"></script>
+		<script type="text/javascript" src="assets/js/adminer-theme.js"></script>
 
 		<?php
 
