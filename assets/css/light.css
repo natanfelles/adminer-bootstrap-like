@@ -1,7 +1,73 @@
 /*!
  * @author Natan Felles <natanfelles@gmail.com>
  */
-html, body, header, footer, aside, menu, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+
+html,
+body,
+header,
+footer,
+aside,
+menu,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
 	margin: 0;
 	padding: 0;
 	outline: 0;
@@ -11,15 +77,20 @@ html, body, header, footer, aside, menu, div, span, applet, object, iframe, h1, 
 	font-size: 14px;
 }
 
-ol, ul {
+ol,
+ul {
 	list-style: none
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: none
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: none
 }
 
@@ -40,11 +111,17 @@ table {
 	border-spacing: 0
 }
 
-aside, menu {
+aside,
+menu {
 	display: block
 }
 
-input[type='submit'], input[type='checkbox'], input[type='radio'], input[type='file'], select, label {
+input[type='submit'],
+input[type='checkbox'],
+input[type='radio'],
+input[type='file'],
+select,
+label {
 	cursor: pointer
 }
 
@@ -80,13 +157,15 @@ body {
 	background-color: #fff;
 }
 
-a, a:visited {
+a,
+a:visited {
 	padding: 4px 0;
 	color: #337ab7;
 	transition: color .1s ease 0s, background-color .1s ease 0s
 }
 
-a:link:hover, a:visited:hover {
+a:link:hover,
+a:visited:hover {
 	color: #23527c;
 	text-decoration: none
 }
@@ -95,7 +174,9 @@ a sup {
 	padding: 0 5px
 }
 
-#logins a, #tables a, #tables span {
+#logins a,
+#tables a,
+#tables span {
 	background: inherit
 }
 
@@ -119,14 +200,23 @@ input:-ms-input-placeholder {
 	color: #999
 }
 
-input:not([type]), input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="number"], textarea, pre[contenteditable="true"], select {
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+textarea,
+pre[contenteditable="true"],
+select {
 	padding: 6px 12px !important;
 	border: 1px solid #ccc !important;
 	border-radius: 4px;
 	font-size: 14px;
 	background: #fff;
 	color: #555;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -134,16 +224,36 @@ input:not([type]), input[type="text"], input[type="email"], input[type="password
 	resize: none !important;
 }
 
-input:not([type]):focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, textarea:focus, pre[contenteditable="true"]:focus, select:focus {
+input:not([type]):focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+pre[contenteditable="true"]:focus,
+select:focus {
 	border-color: #66afe9 !important;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
-input:not([type]), input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="number"], textarea {
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+textarea {
 	-webkit-appearance: none
 }
 
-input:not([type]), input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="number"], select {
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+select {
 	height: 34px;
 }
 
@@ -175,18 +285,21 @@ input[type="submit"][disabled=""]:hover {
 	background: #fff
 }
 
-input[name='drop'], input[name='delete'] {
+input[name='drop'],
+input[name='delete'] {
 	color: #fff !important;
 	background-color: #d9534f !important;
 	border-color: #d43f3a !important;
 }
 
-input[name='drop']:hover, input[name='delete']:hover {
+input[name='drop']:hover,
+input[name='delete']:hover {
 	background-color: #c9302c !important;
 	border-color: #ac2925 !important;
 }
 
-input[name='drop']:active, input[name='delete']:active {
+input[name='drop']:active,
+input[name='delete']:active {
 	background-color: #ac2925 !important;
 	border-color: #761c19 !important;
 }
@@ -210,7 +323,8 @@ input[type="image"]:hover {
 	border-color: #d9edf7
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
 	margin: 7px 5px 7px 0
 }
 
@@ -254,7 +368,8 @@ fieldset input[type="submit"].default:hover {
 	border-color: #adadad;
 }
 
-fieldset + table, table + fieldset {
+fieldset+table,
+table+fieldset {
 	margin-top: 20px
 }
 
@@ -263,7 +378,10 @@ fieldset legend a {
 	padding-bottom: 50px
 }
 
-fieldset > div > div, fieldset > div > p, fieldset > div > a, fieldset > div > code {
+fieldset>div>div,
+fieldset>div>p,
+fieldset>div>a,
+fieldset>div>code {
 	position: relative
 }
 
@@ -277,25 +395,30 @@ legend {
 	border-radius: 4px 4px 0 0;
 }
 
-legend:before, legend:after {
+legend:before,
+legend:after {
 	content: ""
 }
 
-p input, p select, p label, fieldset input, fieldset select {
+p input,
+p select,
+p label,
+fieldset input,
+fieldset select {
 	margin: 0 5px 5px 0
 }
 
-.js fieldset > .hidden {
+.js fieldset>.hidden {
 	display: block;
 	margin: 5px;
 	text-align: center
 }
 
-.js fieldset > .hidden * {
+.js fieldset>.hidden * {
 	display: none !important
 }
 
-.js fieldset > .hidden:before {
+.js fieldset>.hidden:before {
 	position: relative;
 	top: 1px;
 	display: inline-block;
@@ -358,7 +481,15 @@ p input, p select, p label, fieldset input, fieldset select {
 }
 
 @media only screen and (max-width: 768px) {
-	input:not([type]), input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="number"], textarea, pre[contenteditable="true"], select {
+	input:not([type]),
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	textarea,
+	pre[contenteditable="true"],
+	select {
 		font-size: 12pt;
 		vertical-align: -1px
 	}
@@ -373,11 +504,20 @@ p input, p select, p label, fieldset input, fieldset select {
 }
 
 @media only screen and (max-width: 360px) {
-	input:not([type]), input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="number"], textarea, pre[contenteditable="true"], select {
+	input:not([type]),
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	textarea,
+	pre[contenteditable="true"],
+	select {
 		width: 100%
 	}
 
-	input[type="submit"], fieldset input[type="submit"] {
+	input[type="submit"],
+	fieldset input[type="submit"] {
 		padding-left: 10px;
 		padding-right: 10px
 	}
@@ -488,7 +628,7 @@ p input, p select, p label, fieldset input, fieldset select {
 	border-bottom: 1px solid #ddd
 }
 
-#content .links + p {
+#content .links+p {
 	color: #333
 }
 
@@ -547,7 +687,9 @@ code {
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-td code, th code, fieldset code:first-child {
+td code,
+th code,
+fieldset code:first-child {
 	display: inline;
 	margin: 0;
 	padding: 0;
@@ -559,7 +701,7 @@ pre code {
 	margin: 0
 }
 
-fieldset code + i {
+fieldset code+i {
 	display: none
 }
 
@@ -570,7 +712,8 @@ fieldset code + i {
 	color: #bbb
 }
 
-.error, .message {
+.error,
+.message {
 	padding: 15px;
 	margin: 20px 0;
 	border: 1px solid #d6e9c6;
@@ -593,7 +736,8 @@ fieldset code + i {
 	margin: 0 0 5px 0
 }
 
-pre + .message, pre + .error {
+pre+.message,
+pre+.error {
 	margin-top: 10px
 }
 
@@ -637,7 +781,8 @@ h1 #h1 {
 	height: 40px
 }
 
-.version, #version {
+.version,
+#version {
 	position: relative;
 	top: -7px;
 	vertical-align: bottom;
@@ -674,6 +819,7 @@ h1 #h1 {
 .rtl #menu {
 	border-left: 1px solid #ddd;
 }
+
 .rtl * {
 	text-align: right;
 }
@@ -718,14 +864,16 @@ h1 #h1 {
 	width: 100%;
 }
 
-#menu #tables, #menu #logins {
+#menu #tables,
+#menu #logins {
 	border: 0;
 	padding: 0;
 	overflow-y: hidden;
 	/*width: 281px;*/
 }
 
-#menu #tables:hover, #menu #logins:hover {
+#menu #tables:hover,
+#menu #logins:hover {
 	overflow-y: auto;
 }
 
@@ -800,15 +948,17 @@ h1 #h1 {
 	content: "\f00b";
 }
 
-#tables a[href*="&table="]:nth-child(2), #tables a[href*="&select="]:first-child {
+#tables a[href*="&table="]:nth-child(2),
+#tables a[href*="&select="]:first-child {
 	padding-top: 7px
 }
 
-#tables a[href*="&table="]:nth-last-child(2), #tables a[href*="&select="]:nth-last-child(3) {
+#tables a[href*="&table="]:nth-last-child(2),
+#tables a[href*="&select="]:nth-last-child(3) {
 	padding-bottom: 7px
 }
 
-#tables a.active + a {
+#tables a.active+a {
 	color: #d55d00;
 	font-weight: bold
 }
@@ -963,7 +1113,8 @@ h1 #h1 {
 	background-color: #fff;
 }
 
-#menu form, #menu p {
+#menu form,
+#menu p {
 	display: none
 }
 
@@ -976,7 +1127,7 @@ h1 #h1 {
 	border-bottom: 5px solid #ddd;
 	background: #fff;
 	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.03);
-	z-index: 200;	
+	z-index: 200;
 }
 
 #menu.open {
@@ -984,7 +1135,8 @@ h1 #h1 {
 	height: 100%
 }
 
-#menu.open form, #menu.open p {
+#menu.open form,
+#menu.open p {
 	display: block
 }
 
@@ -998,7 +1150,10 @@ h1 #h1 {
 	}
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
 	h1 #h1 {
 		background-image: url("../images/logo-hres.png?3");
 		background-size: 120px
@@ -1025,7 +1180,6 @@ h1 #h1 {
 	white-space: nowrap;
 	vertical-align: middle;
 	display: inline-block;
-
 }
 
 .rtl .links a {
@@ -1073,11 +1227,15 @@ h1 #h1 {
 	content: "\f01b";
 }
 
-.links a[href*="&create="]:before, .links a[href*="&db="][href*="&database="]:before, .links a[href*="&indexes="]:before {
+.links a[href*="&create="]:before,
+.links a[href*="&db="][href*="&database="]:before,
+.links a[href*="&indexes="]:before {
 	content: "\f044";
 }
 
-.links a[href$="&create="]:before, .links a[href$="&database="]:before, .links a[href$="&indexes="]:before {
+.links a[href$="&create="]:before,
+.links a[href$="&database="]:before,
+.links a[href$="&indexes="]:before {
 	content: "\f067";
 }
 
@@ -1097,7 +1255,8 @@ h1 #h1 {
 	content: "\f06e";
 }
 
-.links a[href*="&procedure="]:before, .links a[href*="&function="]:before {
+.links a[href*="&procedure="]:before,
+.links a[href*="&function="]:before {
 	content: "\f0ad";
 }
 
@@ -1137,7 +1296,8 @@ h1 #h1 {
 	content: "\f0c5";
 }
 
-.links a[href*="&foreign="]:before, .links a[href*="&trigger="]:before {
+.links a[href*="&foreign="]:before,
+.links a[href*="&trigger="]:before {
 	content: "\f067";
 }
 
@@ -1154,11 +1314,18 @@ tr {
 	border-bottom: 1px solid #ddd
 }
 
-th, td {
+th,
+td {
 	padding: 8px
 }
 
-thead td, thead th, .odd td, tbody tr:hover td, tbody tr:hover th, .js .checkable .checked td, .js .checkable .checked th {
+thead td,
+thead th,
+.odd td,
+tbody tr:hover td,
+tbody tr:hover th,
+.js .checkable .checked td,
+.js .checkable .checked th {
 	background: transparent
 }
 
@@ -1167,7 +1334,8 @@ thead tr {
 	border-bottom: 2px solid #ddd;
 }
 
-thead td, thead th {
+thead td,
+thead th {
 	padding: 8px;
 	background: transparent;
 	text-align: left;
@@ -1176,7 +1344,8 @@ thead td, thead th {
 	border-right: 1px solid #ddd;
 }
 
-tbody th, tbody td {
+tbody th,
+tbody td {
 	vertical-align: top;
 	border-right: 1px solid #ddd;
 }
@@ -1197,35 +1366,35 @@ table.checkable .checked {
 	background: #d9edf7
 }
 
-table.checkable input[type="checkbox"], table.checkable input[type="radio"] {
+table.checkable input[type="checkbox"],
+table.checkable input[type="radio"] {
 	margin: 2px 5px 2px 0
 }
 
-table.checkable > thead a {
+table.checkable>thead a {
 	padding: 7px 0
 }
 
-table.checkable > thead input[type="checkbox"], table.checkable > thead input[type="radio"] {
+table.checkable>thead input[type="checkbox"],
+table.checkable>thead input[type="radio"] {
 	margin: 2px 5px 2px 0
 }
 
-table > tbody > tr {
+table>tbody>tr {
 	background: #f9f9f9
 }
 
-table.checkable > tbody > tr:hover {
-	background: #f5f5f5
-}
-
-table > tbody > tr.odd {
+table>tbody>tr.odd {
 	background: #fff
 }
 
-table.checkable > tbody > tr.odd:hover {
+table>tbody>tr:hover,
+table.checkable>tbody>tr:hover,
+table.checkable>tbody>tr.odd:hover {
 	background: #f5f5f5
 }
 
-table.checkable > tbody > tr.checked:hover {
+table.checkable>tbody>tr.checked:hover {
 	background: #c4e3f3
 }
 
@@ -1321,7 +1490,8 @@ table.checkable > tbody > tr.checked:hover {
 	}
 }
 
-a.jush-custom:hover, a.jush-help:hover {
+a.jush-custom:hover,
+a.jush-help:hover {
 	color: inherit;
 	text-decoration: underline
 }
@@ -1350,7 +1520,7 @@ a.jush-custom:hover, a.jush-help:hover {
 	padding: 4px 10px
 }
 
-.json + textarea {
+.json+textarea {
 	margin-top: 6px
 }
 
@@ -1424,7 +1594,7 @@ a.json-link span {
 	border: 0;
 }
 
-.login-form table > tbody > tr {
+.login-form table>tbody>tr {
 	background: #fff;
 }
 
