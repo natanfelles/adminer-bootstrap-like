@@ -328,6 +328,17 @@ input[type="radio"] {
 	margin: 7px 5px 7px 0
 }
 
+#form table input:not([type]),
+#form table input[type="text"],
+#form table input[type="email"],
+#form table input[type="password"],
+#form table input[type="search"],
+#form table input[type="number"],
+#form table textarea,
+#form table select {
+	width: 100%;
+}
+
 fieldset {
 	margin: 15px 5px 10px 0;
 	padding: 0 15px 8px;
