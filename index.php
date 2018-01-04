@@ -36,6 +36,7 @@ function adminer_object()
 
 		new AdminerJsonPreview(),
 		new AdminerDumpJson(),
+		new AdminerEditForeign(),
 
 		// new AdminerISPConfig('admin','admin', 'https://server.domain.tld:8080/remote/'),
 
