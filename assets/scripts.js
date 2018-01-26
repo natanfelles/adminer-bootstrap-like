@@ -108,6 +108,12 @@
 					a[i].parentNode.classList += 'active';
 				}
 			}
+
+			var active = document.querySelector('#tables .active');
+
+			if (active) {
+				adminerDesign.tables.scrollTop = active.offsetTop;
+			}
 		},
 
 		setSensor: function() {
