@@ -880,6 +880,8 @@ p.nowrap {
 	position: absolute;
 	box-shadow: 0 1px 1px #0000001a;
 	background: #f5f5f566;
+	line-height: 1.26;
+	font-size: 14px;
 }
 
 #schema .table a {
@@ -888,7 +890,7 @@ p.nowrap {
 	border: 1px solid #ddd;
 	width: 100%;
 	display: block;
-	margin: -16px -3px;
+	margin: -14px -3px;
 	padding: 2px;
 }
 
