@@ -1,53 +1,62 @@
 <?php
-ini_set('display_errors', 0);
+/**
+ * Adminer Bootstrap-Like Design
+ *
+ * @author  Natan Felles, https://natanfelles.github.io <natanfelles@gmail.com>
+ * @link    https://github.com/natanfelles/adminer-bootstrap-like
+ * @link    https://www.adminer.org/plugins/#use
+ * @license https://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license https://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+
+//ini_set('display_errors', 0);
 
 function adminer_object()
 {
-	// Required to run any plugin.
+	// Required to run any plugin
 	include_once './plugins/plugin.php';
 
-	// Plugins auto-loader.
+	// Plugins auto-loader
 	foreach (glob('plugins/*.php') as $filename)
 	{
 		include_once "./{$filename}";
 	}
 
-	// Specify enabled plugins here.
+	// Specify enabled plugins here
 	$plugins = [
-		/*new AdminerDatabaseHide([
+
+		new AdminerDatabaseHide([
 			'mysql',
 			'information_schema',
 			'performance_schema',
 			'sys',
-		]),*/
+		]),
 
-		/*new AdminerLoginServersEnhanced([
-			new AdminerLoginServerEnhanced('127.0.0.1:3306', '127.0.0.1:3306 - MySQL', 'server'),
-			new AdminerLoginServerEnhanced('127.0.0.1:3307', '127.0.0.1:3307 - MariaDB', 'server'),
-			new AdminerLoginServerEnhanced('127.0.0.1:5432', '127.0.0.1:5432 - PostgreSQL', 'pgsql'),
-			new AdminerLoginServerEnhanced('127.0.0.1:27017', '127.0.0.1:27017 - MongoDB', 'mongo'),
-		]),*/
-
-		/*new AdminerCollations([
+		new AdminerCollations([
 			'utf8_general_ci',
 			'utf8mb4_general_ci',
 			'latin1_swedish_ci',
-		]),*/
+		]),
 
-		new AdminerJsonPreview(),
-		new AdminerDumpJson(),
-		new AdminerEditForeign(),
+		new AdminerEditForeign,
+		new AdminerEnumOption,
 
-		// new AdminerISPConfig('admin','admin', 'https://server.domain.tld:8080/remote/'),
+		new AdminerStructComments,
+		new AdminerTableStructure,
+		new AdminerTableIndexesStructure,
 
-		new AdminerSimpleMenu(),
+		new AdminerJsonPreview,
 
-		// AdminerTheme has to be the last one.
-		new AdminerTheme('light', ['light']),
+		new AdminerDumpJson,
+		new AdminerDumpZip,
+
+		//new AdminerISPConfig('admin', 'admin', 'https://server.domain.tld', true),
+
+		new AdminerBootstrapLike(false),
 	];
 
 	return new AdminerPlugin($plugins);
 }
 
-// Include original Adminer or Adminer Editor.
-include './adminer.php';
+// Include original Adminer or Adminer Editor
+include './adminer-4.5.0.php';

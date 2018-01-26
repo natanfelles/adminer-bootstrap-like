@@ -95,7 +95,7 @@ class AdminerISPConfig
     function loginForm()
     {
         ?>
-        <div id="login">
+       <div id="login-form">
             <table>
                 <input type="hidden" name="auth[driver]" value="server">
                 <tr>

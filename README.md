@@ -1,9 +1,12 @@
 # Adminer Bootstrap-Like Design
 
-This project is based in the [Custom Adminer](https://github.com/pematon/adminer-theme) and has an interface inspired in the Bootstrap Framework with Font-Awesome icons.
+[Adminer](https://www.adminer.org) interface inspired in the [Bootstrap Framework](https://getbootstrap.com/docs/3.3) with [Font-Awesome icons](http://fontawesome.io).
 
 ## How to use
-Just download whole package to public directory on your web server. Optionally you can configure plugins in index.php.
+
+Just download the whole package to a public directory on your server.
+
+Optionally you can configure plugins in the _index.php_ file.
 
 ## Print Screens
 
