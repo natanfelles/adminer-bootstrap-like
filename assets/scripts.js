@@ -13,17 +13,6 @@
 	}, false);
 
 	var adminerDesign = {
-		h1: null,
-		logins: null,
-		dbs: null,
-		links: null,
-		tables: null,
-		menuMessage: null,
-		breadcrumb: null,
-		lang: null,
-		logout: null,
-		content: null,
-		pages: null,
 
 		init: function() {
 			adminerDesign.h1 = document.querySelector('#menu h1');
@@ -41,8 +30,7 @@
 
 			adminerDesign.setPositions();
 			adminerDesign.setTables();
-			//	adminerDesign.setSensor();
-
+			adminerDesign.setSensor();
 		},
 
 		setPositions: function() {
@@ -117,7 +105,9 @@
 		},
 
 		setSensor: function() {
-			document.body.innerHTML += '<div id="sensor"></div>';
+			var div = document.createElement('div');
+			div.setAttribute('id', 'sensor');
+			document.body.appendChild(div);
 			var sensor = document.getElementById('sensor');
 
 			function toggleMenu(state) {
@@ -129,7 +119,10 @@
 				if (state === 'closed') {
 					menu.style.display = 'none';
 					content.style.marginLeft = 0;
-					breadcrumb.style.paddingLeft = '40px';
+
+					if (breadcrumb) {
+						breadcrumb.style.paddingLeft = '40px';
+					}
 
 					if (pages) {
 						pages.style.left = 0;
@@ -139,7 +132,10 @@
 				} else {
 					menu.style.display = 'block';
 					content.style.marginLeft = '266px';
-					breadcrumb.style.paddingLeft = '306px';
+
+					if (breadcrumb) {
+						breadcrumb.style.paddingLeft = '306px';
+					}
 
 					if (pages) {
 						pages.style.left = '266px';
