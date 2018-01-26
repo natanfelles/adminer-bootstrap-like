@@ -487,7 +487,10 @@ p.nowrap {
 	color: #2b542c;
 }
 
-
+.error code a:hover,
+.message code a:hover {
+	color: #23527c;
+}
 
 .char {
 	color: #007F00;
