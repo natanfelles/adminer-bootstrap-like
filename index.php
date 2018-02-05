@@ -59,4 +59,4 @@ function adminer_object()
 }
 
 // Include original Adminer or Adminer Editor
-include './adminer-4.5.0.php';
+include './adminer-4.6.0.php';
