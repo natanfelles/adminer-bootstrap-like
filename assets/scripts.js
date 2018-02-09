@@ -31,6 +31,7 @@
 			adminerDesign.setPositions();
 			adminerDesign.setTables();
 			adminerDesign.setSensor();
+			//adminerDesign.setSelects();
 		},
 
 		setPositions: function() {
@@ -114,7 +115,7 @@
 				var menu = document.getElementById('menu');
 				var content = document.getElementById('content');
 				var breadcrumb = document.getElementById('breadcrumb');
-				var pages = document.getElementsByClassName('pages')[0];
+				var pages = document.querySelector('.footer p');
 
 				if (state === 'closed') {
 					menu.style.display = 'none';
@@ -151,6 +152,19 @@
 				var state = localStorage.getItem('menu') === 'open' ? 'closed' : 'open';
 				toggleMenu(state);
 			});
+		},
+
+		setSelects: function() {
+			var selects = document.querySelectorAll("select[name='Collation'], select[name*='collation']");
+
+			console.log(selects);
+			for (var i = 0; i < selects.length; i++) {
+				var options = selects[i];
+				console.log(options);
+				for (var o = 0; o < options.length; o++) {
+					console.log(options[o]);
+				}
+			}
 		},
 
 	};

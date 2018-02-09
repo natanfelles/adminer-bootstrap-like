@@ -578,7 +578,7 @@ p.nowrap {
 	cursor: help;
 }
 
-.pages {
+.footer p:first-child {
 	position: fixed;
 	bottom: 0;
 	left: 266px;
@@ -587,6 +587,14 @@ p.nowrap {
 	border: 1px solid #ddd;
 	width: 100%;
 	margin: 0;
+}
+
+
+.footer {
+	position: relative;
+	bottom: 0;
+	background: #fff;
+	padding: 1px 0 .5em;
 }
 
 .links a {
@@ -726,7 +734,9 @@ p.nowrap {
 	font-weight: normal;
 }
 
-
+/*#tables li:last-child {
+	border-bottom: 10px solid #fff;
+}*/
 
 
 
