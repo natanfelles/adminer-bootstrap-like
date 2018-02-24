@@ -383,9 +383,15 @@ input.wayoff {
 	display: block;
 }
 
+#version,
 .version {
 	color: silver;
 	font-size: 30%;
+}
+
+#version {
+	color: #c9302c;
+	display: none;
 }
 
 .js .hidden,
@@ -869,11 +875,6 @@ p.nowrap {
 	color: #7894c4;
 	text-decoration: none;
 	font-style: italic;
-}
-
-#version {
-	font-size: 67%;
-	color: red;
 }
 
 #schema {
