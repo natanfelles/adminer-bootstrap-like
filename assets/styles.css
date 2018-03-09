@@ -53,7 +53,7 @@ h6 {
 }
 
 h1,
-h2,
+h2, .rtl h2,
 h3 {
 	margin-top: 20px;
 	background: #fff;
@@ -68,6 +68,12 @@ h2 {
 	font-size: 30px;
 	padding-left: 20px;
 	margin-bottom: 14px;
+}
+
+.rtl h2 {
+	margin: 20px 0 14px 0;
+	padding-left: 0;
+	padding-right: 20px;
 }
 
 h3 {
@@ -99,6 +105,10 @@ table {
 	margin: 1em 20px 0 0;
 	border-collapse: collapse;
 	font-size: inherit;
+}
+
+.rtl table {
+	margin: 1em 0 0 20px;
 }
 
 td,
@@ -199,7 +209,7 @@ fieldset div input:last-child {
 	margin-right: 0;
 }
 
-p {
+p, .rtl p {
 	margin: 10px 0;
 }
 
@@ -456,8 +466,8 @@ p.nowrap {
 	white-space: normal;
 }
 
-.error,
-.message {
+.error, .rtl .error,
+.message, .rtl .message {
 	margin: 0 20px 0 0;
 	padding: 15px;
 	border: 1px solid;
@@ -513,6 +523,10 @@ p.nowrap {
 .binary {
 	color: red;
 }
+
+/* #content table {
+	background: #f9f9f9;
+} */
 
 .odd td,
 .odd th {
@@ -611,6 +625,11 @@ p.nowrap {
 	display: inline-block;
 }
 
+.rtl .links a {
+	margin-right: 0;
+	margin-left: 5px;
+}
+
 .links a:hover {
 	text-decoration: none;
 	color: inherit;
@@ -628,6 +647,12 @@ p.nowrap {
 	z-index: 710;
 }
 
+.rtl .logout {
+	left: 4px;
+	right: auto;
+	margin-top: 0;
+}
+
 .loadmore {
 	margin-left: 1ex;
 }
@@ -640,6 +665,11 @@ p.nowrap {
 	left: 0;
 	height: 100%;
 	z-index: 720;
+}
+
+.rtl #sensor {
+	left: auto;
+	right: 0;
 }
 
 #menu {
@@ -670,6 +700,13 @@ p.nowrap {
 	text-align: center;
 }
 
+.rtl #menu h1 {
+	left: auto;
+	right: 0;
+	border-left: 1px solid #ddd;
+	border-right: 0;
+}
+
 #menu p,
 #tables {
 	padding: 0;
@@ -698,6 +735,15 @@ p.nowrap {
 	overflow: hidden !important;
 	border-right: 1px solid #ddd;
 	background: #fff;
+}
+
+.rtl #logins,
+.rtl #tables {
+	top: 210px;
+	left: auto;
+	right: 0;
+	border-right: 0;
+	border-left: 1px solid #ddd;
 }
 
 #tables:hover {
@@ -788,6 +834,13 @@ p.nowrap {
 	font-size: 0;
 }
 
+.rtl #dbs {
+	left: auto;
+	right: 0;
+	border-left: 1px solid #ddd;
+	border-right: 0;
+}
+
 #dbs span {
 	display: none;
 }
@@ -809,6 +862,13 @@ p.nowrap {
 	padding: 0 10px 10px !important;
 	/*height: 60px;*/
 	z-index: 700;
+}
+
+.rtl #menu .links {
+	left: auto;
+	right: 0;
+	border-left: 1px solid #ddd;
+	border-right: 0;
 }
 
 #menu .links a {
@@ -845,6 +905,13 @@ p.nowrap {
 	border-left: 1px solid #ddd;
 }
 
+.rtl #content {
+    margin: 28px 266px 0 0;
+    padding: 10px 20px 40px 20px;
+    border-left: 0;
+    border-right: 1px solid #ddd;
+}
+
 #lang {
 	position: fixed;
 	top: 4px;
@@ -854,6 +921,11 @@ p.nowrap {
 	padding: .3em 1em;
 	z-index: 710;
 	font-size: 0;
+}
+
+.rtl #lang {
+	right: auto;
+	left: 4px;
 }
 
 #breadcrumb {
@@ -870,6 +942,18 @@ p.nowrap {
 	width: 100%;
 	z-index: 700;
 }
+
+.rtl #breadcrumb {
+	left: auto;
+	right: 0;
+	margin: 0 -18px 0 0;
+}
+
+/* .rtl #breadcrumb {
+	left: auto;
+	right: 21em;
+	margin: 0 -18px 0 0;
+} */
 
 #h1 {
 	color: #7894c4;
@@ -918,32 +1002,18 @@ p.nowrap {
 	z-index: 1;
 }
 
-.rtl h2 {
-	margin: 0 -18px 20px 0;
-}
 
-.rtl p,
+
+/* .rtl p,
 .rtl table,
-.rtl .error,
-.rtl .message {
-	margin: 1em 0 0 20px;
-}
+ .rtl .error,
+ .rtl .message  {
+	margin: 1em 20px 0 0;
+} */
 
-.rtl .logout {
-	left: 0;
-	right: auto;
-}
 
-.rtl #content {
-	margin: 2em 21em 0 0;
-	padding: 10px 0 20px 20px;
-}
 
-.rtl #breadcrumb {
-	left: auto;
-	right: 21em;
-	margin: 0 -18px 0 0;
-}
+
 
 .rtl .pages {
 	left: auto;
@@ -955,11 +1025,11 @@ p.nowrap {
 	right: -1000px;
 }
 
-.rtl #lang,
+/* .rtl #lang,
 .rtl #menu {
 	left: auto;
 	right: 0;
-}
+} */
 
 @media all and (max-device-width:880px) {
 	.pages {
@@ -1200,8 +1270,28 @@ a.jush-custom:visited {
 }
 
 #tables a:before,
-.rtl #tables a:after,
 .links a:before {
+	position: relative;
+	top: 1px;
+	margin-right: 2px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #333;
+}
+
+.rtl #tables a:before,
+.rtl .links a:before {
+	display: none;
+}
+
+.rtl #tables a:after,
+.rtl .links a:after {
 	position: relative;
 	top: 1px;
 	margin-right: 2px;

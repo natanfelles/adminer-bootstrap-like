@@ -31,10 +31,16 @@
 			adminerDesign.setPositions();
 			adminerDesign.setTables();
 			adminerDesign.setSensor();
-			//adminerDesign.setSelects();
 		},
 
 		setPositions: function() {
+			var is_rtl = false;
+
+			if (document.body.classList.contains('rtl')) {
+				//console.log('rtl');
+				is_rtl = true;
+			}
+
 			if (adminerDesign.logins) {
 				adminerDesign.logins.style.top = adminerDesign.h1.offsetHeight - 1 + 'px';
 			}
@@ -56,7 +62,11 @@
 			}
 
 			if (adminerDesign.lang && adminerDesign.logout) {
-				adminerDesign.lang.style.right = adminerDesign.logout.offsetWidth + 8 + 'px';
+				if (is_rtl) {
+					adminerDesign.lang.style.left = adminerDesign.logout.offsetWidth + 8 + 'px';
+				} else {
+					adminerDesign.lang.style.right = adminerDesign.logout.offsetWidth + 8 + 'px';
+				}
 			}
 
 			// console.log(this.content);
@@ -110,6 +120,12 @@
 			div.setAttribute('id', 'sensor');
 			document.body.appendChild(div);
 			var sensor = document.getElementById('sensor');
+			var is_rtl = false;
+
+			if (document.body.classList.contains('rtl')) {
+				//console.log('rtl');
+				is_rtl = true;
+			}
 
 			function toggleMenu(state) {
 				var menu = document.getElementById('menu');
@@ -119,27 +135,55 @@
 
 				if (state === 'closed') {
 					menu.style.display = 'none';
-					content.style.marginLeft = 0;
+
+
+					if (is_rtl) {
+						content.style.marginRight = 0;
+					} else {
+						content.style.marginLeft = 0;
+					}
 
 					if (breadcrumb) {
-						breadcrumb.style.paddingLeft = '40px';
+						if (is_rtl) {
+							breadcrumb.style.paddingRight = '40px';
+						} else {
+							breadcrumb.style.paddingLeft = '40px';
+						}
 					}
 
 					if (pages) {
-						pages.style.left = 0;
+						if (is_rtl) {
+							pages.style.right = 0;
+						} else {
+							pages.style.left = 0;
+						}
 					}
 
 					localStorage.setItem('menu', 'closed');
 				} else {
 					menu.style.display = 'block';
-					content.style.marginLeft = '266px';
+
+					if (is_rtl) {
+						content.style.marginRight = '266px';
+					} else {
+						content.style.marginLeft = '266px';
+					}
+
 
 					if (breadcrumb) {
-						breadcrumb.style.paddingLeft = '306px';
+						if (is_rtl) {
+							breadcrumb.style.paddingRight = '306px';
+						} else {
+							breadcrumb.style.paddingLeft = '306px';
+						}
 					}
 
 					if (pages) {
-						pages.style.left = '266px';
+						if (is_rtl) {
+							pages.style.right = '266px';
+						} else {
+							pages.style.left = '266px';
+						}
 					}
 
 					localStorage.setItem('menu', 'open');
@@ -152,20 +196,7 @@
 				var state = localStorage.getItem('menu') === 'open' ? 'closed' : 'open';
 				toggleMenu(state);
 			});
-		},
-
-		setSelects: function() {
-			var selects = document.querySelectorAll("select[name='Collation'], select[name*='collation']");
-
-			console.log(selects);
-			for (var i = 0; i < selects.length; i++) {
-				var options = selects[i];
-				console.log(options);
-				for (var o = 0; o < options.length; o++) {
-					console.log(options[o]);
-				}
-			}
-		},
+		}
 
 	};
 })(window);
