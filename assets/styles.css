@@ -401,7 +401,6 @@ input.wayoff {
 
 #version {
 	color: #c9302c;
-	display: none;
 }
 
 .js .hidden,
