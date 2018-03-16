@@ -1270,7 +1270,8 @@ a.jush-custom:visited {
 }
 
 #tables a:before,
-.links a:before {
+.links a:before,
+#scroller a:before {
 	position: relative;
 	top: 1px;
 	margin-right: 2px;
@@ -1495,4 +1496,42 @@ a.jush-custom:visited {
 
 .json th {
 	border-right-color: #cde;
+}
+
+#scroller {
+	display: none;
+	background: #fff;
+	bottom: 20px;
+	right: 20px;
+	position: fixed;
+	z-index: 999;
+	border: 1px solid #ddd;
+	transition: all linear .2s;
+	opacity: .8;
+	border-radius: 4px;
+}
+
+#scroller a {
+	display: block;
+	color: #333;
+	font-size: 20px;
+	padding: 6px 12px;
+	opacity: .8;
+}
+
+#scroller a:hover {
+	background-color: #f5f5f5;
+	opacity: 1;
+}
+
+#scroller a:first-child {
+	border-bottom: 1px solid #ddd;
+}
+
+#scroller a:first-child:before {
+	content: "\f077";
+}
+
+#scroller a:last-child:before {
+	content: "\f078";
 }

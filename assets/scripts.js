@@ -31,6 +31,37 @@
 			adminerDesign.setPositions();
 			adminerDesign.setTables();
 			adminerDesign.setSensor();
+			adminerDesign.setScroller();
+		},
+
+		setScroller: function () {
+			var scroller = document.getElementById('scroller');
+			var links = scroller.querySelectorAll('a');
+
+			function display() {
+				if (document.body.offsetHeight > window.innerHeight) {
+					scroller.style.display = 'block';
+				} else {
+					scroller.style.display = 'none';
+				}
+			}
+
+			display();
+
+			window.onresize = function(e) {
+				display();
+			};
+
+			links[0].addEventListener('click', function(e) {
+				e.preventDefault();
+				window.scroll(0, 0);
+				document.body.scrollTop = 0;
+			});
+
+			links[1].addEventListener('click', function(e) {
+				e.preventDefault();
+				window.scroll(0, document.body.scrollHeight);
+			});
 		},
 
 		setPositions: function() {

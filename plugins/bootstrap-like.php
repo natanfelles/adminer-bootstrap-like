@@ -51,6 +51,7 @@ class AdminerBootstrapLike
 
 	function name()
 	{
-		return '<a href="./" id="h1">Adminer</a>';
+		return '<a href="./" id="h1">Adminer</a>'
+		. '<div id="scroller"><a href="#"></a><a href="#"></a></div>';
 	}
 }
