@@ -1511,6 +1511,11 @@ a.jush-custom:visited {
 	border-radius: 4px;
 }
 
+.rtl #scroller {
+	right: auto;
+	left: 20px;
+}
+
 #scroller a {
 	display: block;
 	color: #333;
