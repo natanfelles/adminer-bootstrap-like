@@ -31,23 +31,15 @@ class AdminerTinymce {
 		?>
 <script<?php echo nonce(); ?>>
 tinyMCE.init({
-	mode: 'none',
-	theme: 'advanced',
-	plugins: 'contextmenu,paste,table',
 	entity_encoding: 'raw',
-	theme_advanced_buttons1: 'bold,italic,link,unlink,|,sub,sup,|,bullist,numlist,|,cleanup,code',
-	theme_advanced_buttons2: 'tablecontrols',
-	theme_advanced_buttons3: '',
-	theme_advanced_toolbar_location: 'top',
-	theme_advanced_toolbar_align: 'left',
 	language: '<?php echo $lang; ?>'
-});
+}); // learn how to customize here: https://www.tinymce.com/docs/configure/
 </script>
 <?php
 	}
 
 	function selectVal(&$val, $link, $field, $original) {
-		if (preg_match("~_html~", $field["field"]) && $val != '&nbsp;') {
+		if (preg_match("~_html~", $field["field"]) && $val != '') {
 			$shortened = (substr($val, -10) == "<i>...</i>");
 			if ($shortened) {
 				$val = substr($val, 0, -10);
@@ -60,7 +52,7 @@ tinyMCE.init({
 			if (class_exists('DOMDocument')) { // close all opened tags
 				$dom = new DOMDocument;
 				if (@$dom->loadHTML("<meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head>$val")) { // @ - $val can contain errors
-					$val = preg_replace('~.*<body[^>]*>(.*)</body>.*~is', '\\1', $dom->saveHTML());
+					$val = preg_replace('~.*<body[^>]*>(.*)</body>.*~is', '\1', $dom->saveHTML());
 				}
 			}
 		}
@@ -70,7 +62,7 @@ tinyMCE.init({
 		if (preg_match("~text~", $field["type"]) && preg_match("~_html~", $field["field"])) {
 			return "<textarea$attrs id='fields-" . h($field["field"]) . "' rows='12' cols='50'>" . h($value) . "</textarea>" . script("
 tinyMCE.remove(tinyMCE.get('fields-" . js_escape($field["field"]) . "') || { });
-tinyMCE.execCommand('mceAddControl', true, 'fields-" . js_escape($field["field"]) . "');
+tinyMCE.EditorManager.execCommand('mceAddControl', true, 'fields-" . js_escape($field["field"]) . "');
 qs('#form').onsubmit = function () {
 	tinyMCE.each(tinyMCE.editors, function (ed) {
 		ed.remove();

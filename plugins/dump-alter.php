@@ -30,7 +30,7 @@ CREATE PROCEDURE adminer_alter (INOUT alter_command text) BEGIN
 		IF NOT done THEN
 			CASE _table_name";
 		foreach (get_rows($query) as $row) {
-			$comment = q($row["ENGINE"] == "InnoDB" ? preg_replace('~(?:(.+); )?InnoDB free: .*~', '\\1', $row["TABLE_COMMENT"]) : $row["TABLE_COMMENT"]);
+			$comment = q($row["ENGINE"] == "InnoDB" ? preg_replace('~(?:(.+); )?InnoDB free: .*~', '\1', $row["TABLE_COMMENT"]) : $row["TABLE_COMMENT"]);
 			echo "
 			WHEN " . q($row["TABLE_NAME"]) . " THEN
 				" . (isset($row["ENGINE"]) ? "IF _engine != '$row[ENGINE]' OR _table_collation != '$row[TABLE_COLLATION]' OR _table_comment != $comment THEN
@@ -69,7 +69,7 @@ SELECT @adminer_alter;
 	
 	function dumpTable($table, $style, $is_view = false) {
 		if ($_POST["format"] == "sql_alter") {
-			$create = create_sql($table, $_POST["auto_increment"]);
+			$create = create_sql($table, $_POST["auto_increment"], $style);
 			if ($is_view) {
 				echo substr_replace($create, " OR REPLACE", 6, 0) . ";\n\n";
 			} else {
