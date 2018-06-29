@@ -42,7 +42,7 @@ class AdminerBootstrapLike
 		?>
 
 		<div id="login-form">
-			<?php echo Adminer::loginForm() ?>
+			<?php (new Adminer())->loginForm() ?>
 		</div>
 
 		<?php
