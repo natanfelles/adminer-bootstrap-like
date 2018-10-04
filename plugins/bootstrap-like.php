@@ -3,8 +3,8 @@
  * Adminer Bootstrap-Like Design
  *
  * @author  Natan Felles, https://natanfelles.github.io <natanfelles@gmail.com>
- * @link    https://github.com/natanfelles/adminer-bootstrap-like
- * @link    https://www.adminer.org/plugins/#use
+ * @link	https://github.com/natanfelles/adminer-bootstrap-like
+ * @link	https://www.adminer.org/plugins/#use
  * @license https://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  * @license https://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
  */
@@ -16,20 +16,20 @@ class AdminerBootstrapLike
 {
 	var $dev;
 
-    /**
-     * @var Adminer
-     */
-    var $adminer;
+	/**
+	 * @var Adminer
+	 */
+	var $adminer;
 
 	/**
 	 * Class constructor
 	 *
 	 * @param Adminer $adminer
-     * @param boolean $dev Set TRUE to development mode
+	 * @param boolean $dev Set TRUE to development mode
 	 */
 	public function __construct(&$adminer, $dev = false)
 	{
-        $this->adminer =& $adminer;
+		$this->adminer =& $adminer;
 		$this->dev = $dev;
 	}
 
