@@ -16,13 +16,20 @@ class AdminerBootstrapLike
 {
 	var $dev;
 
+    /**
+     * @var Adminer
+     */
+    var $adminer;
+
 	/**
 	 * Class constructor
 	 *
-	 * @param boolean $dev Set TRUE to development mode
+	 * @param Adminer $adminer
+     * @param boolean $dev Set TRUE to development mode
 	 */
-	public function __construct($dev = false)
+	public function __construct(&$adminer, $dev = false)
 	{
+        $this->adminer =& $adminer;
 		$this->dev = $dev;
 	}
 
@@ -42,7 +49,7 @@ class AdminerBootstrapLike
 		?>
 
 		<div id="login-form">
-			<?php (new Adminer())->loginForm() ?>
+			<?php $this->adminer->loginForm() ?>
 		</div>
 
 		<?php

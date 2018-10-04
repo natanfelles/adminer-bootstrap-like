@@ -52,10 +52,12 @@ function adminer_object()
 
 		//new AdminerISPConfig('admin', 'admin', 'https://server.domain.tld', true),
 
-		new AdminerBootstrapLike(false),
 	];
 
-	return new AdminerPlugin($plugins);
+	$adminer = new AdminerPlugin($plugins);
+
+	// you can add plugins after instantiating the adminer object so it can use the referenced object!
+    $adminer->addPlugin(new AdminerBootstrapLike($adminer, false));
 }
 
 // Include original Adminer or Adminer Editor

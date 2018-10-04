@@ -32,6 +32,13 @@ class AdminerPlugin extends Adminer {
 		$this->plugins = $plugins;
 		//! it is possible to use ReflectionObject to find out which plugins defines which methods at once
 	}
+
+    /** Register additional plugin after instantiating the class
+     * @param $plugin
+     */
+	function addPlugin($plugin){
+        $this->plugins[] = $plugin;
+    }
 	
 	function _callParent($function, $args) {
 		return call_user_func_array(array('parent', $function), $args);
