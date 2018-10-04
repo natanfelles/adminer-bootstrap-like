@@ -58,6 +58,8 @@ function adminer_object()
 
 	// you can add plugins after instantiating the adminer object so it can use the referenced object!
     $adminer->addPlugin(new AdminerBootstrapLike($adminer, false));
+
+    return $adminer;
 }
 
 // Include original Adminer or Adminer Editor
