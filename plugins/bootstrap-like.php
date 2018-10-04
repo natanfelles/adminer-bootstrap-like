@@ -17,7 +17,7 @@ class AdminerBootstrapLike
 	var $dev;
 
 	/**
-	 * @var Adminer
+	 * @var AdminerPlugin
 	 */
 	var $adminer;
 
@@ -46,6 +46,7 @@ class AdminerBootstrapLike
 
 	function loginForm()
 	{
+		$this->adminer->propagation=false;
 		?>
 
 		<div id="login-form">
