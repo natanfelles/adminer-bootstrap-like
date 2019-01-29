@@ -707,6 +707,7 @@ p.nowrap {
 }
 
 #menu p,
+#logins,
 #tables {
 	padding: 0;
 	margin: 0;
@@ -750,6 +751,7 @@ p.nowrap {
 }
 
 #logins a,
+/* #logins li, */
 #tables li {
 	list-style: none;
 	padding: 10px 15px;
