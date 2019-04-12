@@ -176,9 +176,11 @@ table select {
 #login-form input[type=checkbox] {
 	box-sizing: unset;
 	width: auto;
+}
+#login-form label {
+	display: inline-block;
 	margin-top: 20px;
 }
-
 fieldset {
 	display: inline;
 	vertical-align: top;

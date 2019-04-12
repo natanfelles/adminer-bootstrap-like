@@ -39,7 +39,7 @@
 			var links = scroller.querySelectorAll('a');
 
 			function display() {
-				if (document.body.offsetHeight > window.innerHeight) {
+				if (window.innerHeight < window.innerHeight + document.documentElement.scrollTop) {
 					scroller.style.display = 'block';
 				} else {
 					scroller.style.display = 'none';
@@ -48,9 +48,8 @@
 
 			display();
 
-			window.onresize = function(e) {
-				display();
-			};
+			// react on scroll event to toggle scroller visibilty
+			window.addEventListener('scroll', display);
 
 			links[0].addEventListener('click', function(e) {
 				e.preventDefault();
