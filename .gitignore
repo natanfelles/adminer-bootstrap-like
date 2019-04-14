@@ -1,5 +1,6 @@
 .idea
 plugins
+!plugins/.gitkeep
 vendor
 adminer.php
 composer.lock
