@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-composer require natanfelles/adminer-bootstrap-like
+composer create-project natanfelles/adminer-bootstrap-like
 ```
 
 Optionally, it is possible to configure [plugins](https://www.adminer.org/plugins) in the _index.php_ file.

@@ -1,6 +1,6 @@
 {
 	"name": "natanfelles/adminer-bootstrap-like",
-	"type": "library",
+	"type": "project",
 	"description": "Adminer interface inspired by the Bootstrap Framework.",
 	"keywords": [
 		"adminer",
@@ -8,6 +8,10 @@
 		"bootstrap"
 	],
 	"homepage": "https://github.com/natanfelles/array-simple",
+	"license": [
+		"Apache-2.0",
+		"GPL-2.0-only"
+	],
 	"authors": [
 		{
 			"name": "Natan Felles",
@@ -22,11 +26,9 @@
 		"localheinz/composer-normalize": "^1.1"
 	},
 	"autoload": {
-		"psr-4": {
-			"": "plugins"
-		},
 		"classmap": [
-			"src/AdminerBootstrapLike.php"
+			"src/AdminerBootstrapLike.php",
+			"plugins/"
 		]
 	},
 	"minimum-stability": "dev",
