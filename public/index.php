@@ -9,54 +9,26 @@
  * @license https://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
  */
 
-//ini_set('display_errors', 0);
+require __DIR__ . '/../vendor/autoload.php';
 
 function adminer_object()
 {
-	// Required to run any plugin
-	include_once './plugins/plugin.php';
-
-	// Plugins auto-loader
-	foreach (glob('plugins/*.php') as $filename)
-	{
-		include_once "./{$filename}";
-	}
-
-	// Specify enabled plugins here
-	$plugins = [
-
+	return new AdminerPlugin([
 		new AdminerDatabaseHide([
 			'mysql',
 			'information_schema',
 			'performance_schema',
 			'sys',
 		]),
-
-		new AdminerCollations([
-			'utf8_general_ci',
-			'utf8mb4_general_ci',
-			'latin1_swedish_ci',
-		]),
-
 		new AdminerEditForeign,
 		new AdminerEnumOption,
-
 		new AdminerStructComments,
 		new AdminerTableStructure,
 		new AdminerTableIndexesStructure,
-
-		new AdminerJsonPreview,
-
 		new AdminerDumpJson,
 		new AdminerDumpZip,
-
-		//new AdminerISPConfig('admin', 'admin', 'https://server.domain.tld', true),
-
 		new AdminerBootstrapLike(false),
-	];
-
-	return new AdminerPlugin($plugins);
+	]);
 }
 
-// Include original Adminer or Adminer Editor
-include './adminer-4.7.1.php';
+require __DIR__ . '/../adminer.php';
