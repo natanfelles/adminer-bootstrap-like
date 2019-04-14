@@ -1,4 +1,5 @@
 .idea
+plugins
 vendor
 adminer.php
 composer.lock

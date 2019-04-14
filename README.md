@@ -2,11 +2,13 @@
 
 [Adminer](https://www.adminer.org) interface inspired by the [Bootstrap Framework](https://getbootstrap.com/docs/3.3) with [Font-Awesome icons](http://fontawesome.io).
 
-## How to use
+## Installation
 
-Just download the whole package to a public directory on your server.
+```
+composer require natanfelles/adminer-bootstrap-like
+```
 
-Optionally you can configure [plugins](https://www.adminer.org/plugins) in the _index.php_ file.
+Optionally, it is possible to configure [plugins](https://www.adminer.org/plugins) in the _index.php_ file.
 
 ## Print Screen and Video
 
