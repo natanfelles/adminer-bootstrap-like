@@ -13,7 +13,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 function adminer_object()
 {
-	return new AdminerPlugin([
+	return new AdminerBootstrapLike([
 		new AdminerDatabaseHide([
 			'mysql',
 			'information_schema',
@@ -27,8 +27,7 @@ function adminer_object()
 		new AdminerTableIndexesStructure,
 		new AdminerDumpJson,
 		new AdminerDumpZip,
-		new AdminerBootstrapLike(false),
-	]);
+	], false);
 }
 
 require __DIR__ . '/../adminer.php';

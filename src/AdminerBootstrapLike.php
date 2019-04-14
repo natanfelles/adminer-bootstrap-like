@@ -12,21 +12,23 @@
 /**
  * Class AdminerBootstrapLike
  */
-class AdminerBootstrapLike
+class AdminerBootstrapLike extends AdminerPlugin
 {
-	var $dev;
+	protected $dev = false;
 
 	/**
 	 * Class constructor
 	 *
+	 * @param array $plugins
 	 * @param boolean $dev Set TRUE to development mode
 	 */
-	public function __construct($dev = false)
+	public function __construct($plugins, $dev = false)
 	{
 		$this->dev = $dev;
+		parent::__construct($plugins);
 	}
 
-	function head()
+	public function head()
 	{
 		?>
 
@@ -34,22 +36,20 @@ class AdminerBootstrapLike
 		<script type="application/javascript" src="assets/scripts<?php echo $this->dev ? '' : '.min' ?>.js" <?php echo nonce() ?>></script>
 
 		<?php
-		return true;
 	}
 
-	function loginForm()
+	public function loginForm()
 	{
 		?>
 
 		<div id="login-form">
-			<?php (new Adminer())->loginForm() ?>
+			<?php parent::loginForm() ?>
 		</div>
 
 		<?php
-		return true;
 	}
 
-	function name()
+	public function name()
 	{
 		return '<a href="./" id="h1">Adminer</a>'
 		. '<div id="scroller"><a href="#"></a><a href="#"></a></div>';
