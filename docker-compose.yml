@@ -1,0 +1,16 @@
+version: "3"
+services:
+  adminer:
+    image: natanfelles/adminer
+    ports:
+      - 8080:8080
+    depends_on:
+      - mariadb
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: tests
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
