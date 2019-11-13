@@ -10,6 +10,14 @@ composer create-project natanfelles/adminer-bootstrap-like
 
 Optionally, it is possible to configure [plugins](https://www.adminer.org/plugins) in the _index.php_ file.
 
+## Update Adminer
+
+Go to the installation directory and run:
+
+```
+composer update
+```
+
 ## Print Screen and Video
 
 [![Adminer Bootstrap-Like Design](https://i.imgur.com/Hu9ANYR.png)](https://www.youtube.com/watch?v=fMFCuaJphVk "Adminer Sidebar Toggle")
