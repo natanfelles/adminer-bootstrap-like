@@ -8,6 +8,14 @@
 composer create-project natanfelles/adminer-bootstrap-like
 ```
 
+or:
+
+```
+git clone git@github.com:natanfelles/adminer-bootstrap-like.git
+cd adminer-bootstrap-like
+composer install
+```
+
 Optionally, it is possible to configure [plugins](https://www.adminer.org/plugins) in the _index.php_ file.
 
 ## Update Adminer
