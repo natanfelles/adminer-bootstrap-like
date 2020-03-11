@@ -852,6 +852,11 @@ p.nowrap {
 	width: 100%;
 }
 
+#dbs input[name=db] {
+	width: 150px;
+	margin-right: 10px;
+}
+
 #menu .links {
 	width: 246px;
 	border-right: 1px solid #ddd;
