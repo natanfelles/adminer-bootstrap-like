@@ -739,6 +739,10 @@ p.nowrap {
 	background: #fff;
 }
 
+#logins {
+	height: 100%;
+}
+
 .rtl #logins,
 .rtl #tables {
 	top: 210px;
