@@ -24,7 +24,7 @@
 		"vrana/jush": "^2"
 	},
 	"require-dev": {
-		"localheinz/composer-normalize": "^2.0"
+		"ergebnis/composer-normalize": "^2.0"
 	},
 	"autoload": {
 		"classmap": [
