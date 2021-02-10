@@ -20,7 +20,7 @@
 	],
 	"require": {
 		"php": ">=5.6",
-		"vrana/adminer": "^4.7",
+		"vrana/adminer": "^4.8",
 		"vrana/jush": "^2"
 	},
 	"require-dev": {
