@@ -1552,3 +1552,39 @@ a.jush-custom:visited {
 #scroller a:last-child:before {
 	content: "\f078";
 }
+
+#toggle {
+	background: #fff;
+	border: 1px solid #ddd;
+	width: 20px;
+	display: inline-block;
+	margin-right: 20px;
+	text-align: center;
+}
+
+.rtl #toggle {
+	margin-left: 20px;
+	margin-right: 0;
+}
+
+#toggle:hover {
+	background: #e6e6e6;
+	border-color: #adadad;
+}
+
+#toggle:before {
+	content: "\f0c9";
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #333;
+	font-size: 14px;
+	margin-top: 1px;
+	padding: 2px;
+}

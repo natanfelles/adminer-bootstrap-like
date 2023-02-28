@@ -28,9 +28,12 @@
 			adminerDesign.pages = document.getElementsByClassName('pages')[0];
 			adminerDesign.menu = document.getElementById('menu');
 
+			adminerDesign.breadcrumb.innerHTML = '<a href="#" id="toggle"></a>'
+			+ adminerDesign.breadcrumb.innerHTML;
+
 			adminerDesign.setPositions();
 			adminerDesign.setTables();
-			adminerDesign.setSensor();
+			adminerDesign.setToggle();
 			adminerDesign.setScroller();
 		},
 
@@ -145,11 +148,8 @@
 			}
 		},
 
-		setSensor: function() {
-			var div = document.createElement('div');
-			div.setAttribute('id', 'sensor');
-			document.body.appendChild(div);
-			var sensor = document.getElementById('sensor');
+		setToggle: function() {
+			var toggle = document.getElementById('toggle');
 			var is_rtl = false;
 
 			if (document.body.classList.contains('rtl')) {
@@ -222,7 +222,7 @@
 
 			toggleMenu(localStorage.getItem('menu'));
 
-			sensor.addEventListener('mouseover', function() {
+			toggle.addEventListener('click', function() {
 				var state = localStorage.getItem('menu') === 'open' ? 'closed' : 'open';
 				toggleMenu(state);
 			});
