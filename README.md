@@ -26,6 +26,14 @@ Go to the installation directory and run:
 composer update
 ```
 
+## Minify Assets
+
+```
+cd public/assets/
+yui-compressor scripts.js -o scripts.min.js
+yui-compressor styles.css -o styles.min.css
+```
+
 ## Print Screen and Video
 
 [![Adminer Bootstrap-Like Design](https://i.imgur.com/Hu9ANYR.png)](https://www.youtube.com/watch?v=fMFCuaJphVk "Adminer Sidebar Toggle")
