@@ -22,7 +22,7 @@ function adminer_object()
 			'performance_schema',
 			'sys',
 		]),
-		new AdminerEditForeign,
+	//	new AdminerEditForeign,
 		new AdminerEnumOption,
 		new AdminerStructComments,
 		new AdminerTableStructure,

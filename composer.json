@@ -1,51 +1,51 @@
 {
-	"name": "natanfelles/adminer-bootstrap-like",
-	"type": "project",
-	"description": "Adminer interface inspired by the Bootstrap Framework.",
-	"keywords": [
-		"adminer",
-		"database",
-		"bootstrap"
-	],
-	"homepage": "https://github.com/natanfelles/adminer-bootstrap-like",
-	"license": [
-		"Apache-2.0",
-		"GPL-2.0-only"
-	],
-	"authors": [
-		{
-			"name": "Natan Felles",
-			"email": "natanfelles@gmail.com"
-		}
-	],
-	"require": {
-		"php": ">=5.6",
-		"vrana/adminer": "^4.8",
-		"vrana/jush": "^2"
-	},
-	"require-dev": {
-		"ergebnis/composer-normalize": "^2.0"
-	},
-	"autoload": {
-		"classmap": [
-			"src/AdminerBootstrapLike.php",
-			"plugins/"
-		]
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true,
-	"scripts": {
-		"post-install-cmd": [
-			"php compile.php",
-			"composer dump-autoload --optimize"
-		],
-		"post-update-cmd": [
-			"php compile.php",
-			"composer dump-autoload --optimize"
-		]
-	},
-	"support": {
-		"issues": "https://github.com/natanfelles/adminer-bootstrap-like/issues",
-		"source": "https://github.com/natanfelles/adminer-bootstrap-like"
-	}
+    "name": "natanfelles/adminer-bootstrap-like",
+    "type": "project",
+    "description": "Adminer interface inspired by the Bootstrap Framework.",
+    "keywords": [
+        "adminer",
+        "database",
+        "bootstrap"
+    ],
+    "homepage": "https://github.com/natanfelles/adminer-bootstrap-like",
+    "license": [
+        "Apache-2.0",
+        "GPL-2.0-only"
+    ],
+    "authors": [
+        {
+            "name": "Natan Felles",
+            "email": "natanfelles@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "vrana/adminer": "^4.8",
+        "vrana/jush": "^2"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/AdminerBootstrapLike.php",
+            "plugins/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": [
+            "php compile.php",
+            "composer dump-autoload --optimize"
+        ],
+        "post-update-cmd": [
+            "php compile.php",
+            "composer dump-autoload --optimize"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/natanfelles/adminer-bootstrap-like/issues",
+        "source": "https://github.com/natanfelles/adminer-bootstrap-like"
+    }
 }
