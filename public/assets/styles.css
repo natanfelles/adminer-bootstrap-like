@@ -395,7 +395,7 @@ input.wayoff {
 #version,
 .version {
     color: silver;
-    font-size: 30%;
+    font-size: 14px;
 }
 
 #version {
@@ -724,7 +724,8 @@ p.nowrap {
 #logins,
 #tables {
     position: fixed;
-    top: 210px;
+    /*top: 210px;*/
+    top: 40px;
     left: 0;
     /*background: orange;*/
     height: 100px;
@@ -740,7 +741,8 @@ p.nowrap {
 
 .rtl #logins,
 .rtl #tables {
-    top: 210px;
+    /*top: 210px;*/
+    top: 40px;
     left: auto;
     right: 0;
     border-right: 0;

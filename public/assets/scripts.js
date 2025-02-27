@@ -79,10 +79,11 @@
                 adminerDesign.menuMessage.style.top = adminerDesign.h1.offsetHeight + adminerDesign.dbs.offsetHeight + adminerDesign.links.offsetHeight + 'px';
             }
             if (adminerDesign.lang && adminerDesign.logout) {
+                var width = document.querySelector('.logout').clientWidth + 20;
                 if (is_rtl) {
-                    adminerDesign.lang.style.left = adminerDesign.logout.offsetWidth + 8 + 'px';
+                    adminerDesign.lang.style.left =  width + 'px';
                 } else {
-                    adminerDesign.lang.style.right = adminerDesign.logout.offsetWidth + 8 + 'px';
+                    adminerDesign.lang.style.right =  width + 'px';
                 }
             }
             // console.log(this.content);
