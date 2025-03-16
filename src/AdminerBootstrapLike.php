@@ -36,7 +36,7 @@ class AdminerBootstrapLike extends AdminerPlugin
         <link rel="stylesheet" type="text/css" href="assets/styles<?php echo $this->dev ? ''
             : '.min' ?>.css">
         <script type="application/javascript" src="assets/scripts<?php echo $this->dev ? ''
-            : '.min' ?>.js" <?php echo nonce() ?>></script>
+            : '.min' ?>.js" <?php echo Adminer\nonce() ?>></script>
 
         <?php
     }
