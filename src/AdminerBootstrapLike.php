@@ -29,7 +29,7 @@ class AdminerBootstrapLike extends AdminerPlugin
         parent::__construct($plugins);
     }
 
-    public function head()
+    public function head($dark = null)
     {
         ?>
 
