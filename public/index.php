@@ -25,7 +25,6 @@ function adminer_object()
         ]),
         //	new AdminerEditForeign,
         new AdminerEnumOption,
-        new AdminerStructComments,
         new AdminerTableStructure,
         new AdminerTableIndexesStructure,
         new AdminerDumpJson,
