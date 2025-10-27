@@ -13,20 +13,18 @@
 /**
  * Class AdminerBootstrapLike
  */
-class AdminerBootstrapLike extends AdminerPlugin
+class AdminerBootstrapLike extends Adminer\Plugin
 {
     protected $dev = false;
 
     /**
      * Class constructor
      *
-     * @param array $plugins
      * @param boolean $dev Set TRUE to development mode
      */
-    public function __construct($plugins, $dev = false)
+    public function __construct($dev = false)
     {
         $this->dev = $dev;
-        parent::__construct($plugins);
     }
 
     public function head($dark = null)
@@ -43,6 +41,7 @@ class AdminerBootstrapLike extends AdminerPlugin
 
     public function loginForm()
     {
+        /*
         ?>
 
         <div id="login-form">
@@ -50,6 +49,7 @@ class AdminerBootstrapLike extends AdminerPlugin
         </div>
 
         <?php
+        */
     }
 
     public function name()
