@@ -11,7 +11,7 @@
  */
 
 /**
- * Class AdminerBootstrapLike
+ * Transforms Adminer with a Bootstrap-like design
  */
 class AdminerBootstrapLike extends Adminer\Plugin
 {
