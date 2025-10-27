@@ -602,6 +602,7 @@ p.nowrap {
     height: 18px;
     background-color: #337ab7;
     border: 1px solid #2e6da4;
+    filter: none;
 }
 
 .icon:hover {
@@ -630,15 +631,23 @@ p.nowrap {
 
 .footer {
     border-image: none;
-    border-top-color: transparent;
-    position: relative;
+    border: 1px solid #ddd;
+    /*position: relative;*/
     bottom: 0;
     background: #fff;
-    padding: 1px 0 .5em;
+    margin: 23px -20px .5em 0;
+    /*box-shadow: 0 -5px 10px 10px #000000f0;*/
+    /*box-shadow:  0 -5px 10px 10px rgba(0, 0, 0, .125);*/
+    box-shadow: none;
 }
 
 .footer > div {
     background: #fff;
+    padding: 12px;
+}
+
+.footer > div > fieldset {
+    margin-bottom: 0;
 }
 
 .links a {
@@ -669,6 +678,8 @@ p.nowrap {
     top: 4px;
     right: 4px;
     z-index: 710;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .rtl .logout {
