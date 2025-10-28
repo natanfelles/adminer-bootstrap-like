@@ -414,6 +414,11 @@ input.wayoff {
     color: #c9302c;
 }
 
+:target {
+    color: inherit;
+    background: transparent;
+}
+
 .js .hidden,
 .nojs .jsonly {
     display: none;
