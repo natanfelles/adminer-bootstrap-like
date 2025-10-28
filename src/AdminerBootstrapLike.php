@@ -11,7 +11,7 @@
  */
 
 /**
- * Transforms Adminer with a Bootstrap-like design
+ * Adminer interface inspired by the Bootstrap Framework with Font-Awesome icons
  */
 class AdminerBootstrapLike extends Adminer\Plugin
 {
