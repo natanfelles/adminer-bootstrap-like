@@ -36,7 +36,7 @@
     "autoload": {
         "classmap": [
             "src/AdminerBootstrapLike.php",
-            "plugins/"
+            "adminer-plugins/"
         ]
     },
     "config": {
