@@ -41,15 +41,15 @@ class AdminerBootstrapLike extends Adminer\Plugin
 
     public function loginForm()
     {
-        /*
+        $adminer = new Adminer\Adminer();
         ?>
 
         <div id="login-form">
-            <?php parent::loginForm() ?>
+            <?php $adminer->loginForm(); ?>
         </div>
 
         <?php
-        */
+        return true;
     }
 
     public function name()
