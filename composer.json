@@ -25,8 +25,8 @@
     "require": {
         "php": ">=5.6",
         "vrana/adminer": "~5.4.0",
-        "vrana/jush": "~2.1.0",
-        "vrana/phpshrink": "dev-main"
+        "vrana/jush": "dev-main#19fef25342407d2ad696f27ac7f195025c71b89b",
+        "vrana/phpshrink": "dev-main#b3d92cdf76aacfde22732a9132669d5ab55e7310"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.45"
