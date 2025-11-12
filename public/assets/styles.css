@@ -616,7 +616,7 @@ p.nowrap {
 }
 
 .size {
-    width: 6ex;
+    min-width: 100px;
 }
 
 .help {
@@ -1523,6 +1523,12 @@ a.jush-custom:visited {
 
 #fieldset-partition.hidden:before {
     content: "\f065";
+}
+
+#fieldset-select div + div,
+#fieldset-search div + div,
+#fieldset-sort div + div {
+    margin-top: 10px;
 }
 
 /*a.json-icon::before {
