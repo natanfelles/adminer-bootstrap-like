@@ -25,12 +25,17 @@
             adminerDesign.content = document.getElementById('content');
             adminerDesign.pages = document.getElementsByClassName('pages')[0];
             adminerDesign.menu = document.getElementById('menu');
-            adminerDesign.breadcrumb.innerHTML = '<a href="#" id="toggle"></a>'
-                + adminerDesign.breadcrumb.innerHTML;
+            adminerDesign.setBreadcrumb();
             adminerDesign.setPositions();
             adminerDesign.setTables();
             adminerDesign.setToggle();
             adminerDesign.setScroller();
+        },
+        setBreadcrumb: function() {
+            if (adminerDesign.breadcrumb) {
+                adminerDesign.breadcrumb.innerHTML = '<a href="#" id="toggle"></a>'
+                + adminerDesign.breadcrumb.innerHTML;
+            }
         },
         setScroller: function () {
             var scroller = document.getElementById('scroller');
@@ -123,6 +128,9 @@
         },
         setToggle: function () {
             var toggle = document.getElementById('toggle');
+            if (!toggle) {
+                return;
+            }
             var is_rtl = false;
             if (document.body.classList.contains('rtl')) {
                 //console.log('rtl');
