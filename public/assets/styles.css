@@ -267,6 +267,10 @@ tbody tr:hover th,
     background: #f5f5f5;
 }
 
+.odds tbody tr {
+    background-color: #fff;
+}
+
 pre {
     margin: 1em 0 0;
     overflow: auto;
