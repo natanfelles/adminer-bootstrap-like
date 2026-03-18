@@ -650,6 +650,10 @@ p.nowrap {
     box-shadow: none;
 }
 
+.rtl .footer {
+    margin: 23px 0 .5em -20px;
+}
+
 .footer > div {
     background: #fff;
     padding: 12px;
